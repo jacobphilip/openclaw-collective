@@ -14,6 +14,29 @@ This folder is home. Treat it that way.
 | **Sentinel** | Security, guardrails, anti-hallucination |
 | **Archivist** | Deep research, 12-model Ollama ensemble |
 
+## Telegram Stream Settings
+
+Recommended for reliability while keeping live preview:
+
+```json
+{
+  "channels": {
+    "telegram": {
+      "streamMode": "partial",
+      "chunkMode": "newline",
+      "draftChunk": {
+        "minChars": 100,
+        "maxChars": 400,
+        "breakPreference": "paragraph"
+      }
+    }
+  }
+}
+```
+
+- `chunkMode: "newline"` — splits on paragraph breaks, not mid-sentence
+- `draftChunk.maxChars: 400` — smaller chunks = fewer edit failures
+
 ## First Run
 
 If `BOOTSTRAP.md` exists, that's your birth certificate. Follow it, figure out who you are, then delete it. You won't need it again.
