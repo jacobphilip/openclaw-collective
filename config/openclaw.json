@@ -1,0 +1,31 @@
+{
+  "agents": {
+    "forge": {
+      "model": "openrouter/minimax/minimax-m2.5",
+      "fallback": "openrouter/moonshotai/kimi-k2.5"
+    },
+    "visionary": {
+      "model": "openrouter/x-ai/grok-4",
+      "fallback": "openrouter/moonshotai/kimi-k2.5"
+    },
+    "architect": {
+      "model": "openrouter/minimax/minimax-m2.5",
+      "fallback": "openrouter/openai/gpt-5-codex"
+    },
+    "sentinel": {
+      "model": "openrouter/anthropic/claude-opus-4.6",
+      "fallback": "openrouter/anthropic/claude-sonnet-4.5"
+    },
+    "auditor": {
+      "model": "openrouter/moonshotai/kimi-k2-thinking",
+      "fallback": "openrouter/deepseek/deepseek-v3.2"
+    },
+    "enforcer": {
+      "model": "openrouter/openai/gpt-5-codex",
+      "fallback": "openrouter/minimax/minimax-m2.5"
+    },
+    "archivist": { "remote": true, "endpoint": "ws://archivist-pi:18789" }
+  },
+  "defaultAgent": "forge",
+  "tools": ["sync/git-sync", "research/ollama-ensemble", "collective/provision-archivist"]
+}
